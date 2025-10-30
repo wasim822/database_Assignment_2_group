@@ -2,6 +2,19 @@ WASIM
 
 Aiden
 
+Assignment #02 – Error Report – Vendor Section
+Line 66: Update Statement ignored
+Reason: Syntax Error >>
+SQL statement was not ended correctly. The Update statement did not end with a ‘;’ (semi colon) which caused the program to skip over to the next ‘;’ causing a compilation error within the program
+Fix: add ‘;’ to end of the WHERE clause
+
+Line 60: ‘k_status’ misspelt
+Fix: change from ‘k_stats’ to ‘k_status’ to properly call declared variable
+
+Line 58: wrong data type passed
+Sends wrong data to row, sets ‘vendor_status’ to value outside of the constraint placed on it. Sends exception for check constraint.
+Fix: change ‘k_status’ to ‘k_active_status’
+
 
 Sehajbir 
 

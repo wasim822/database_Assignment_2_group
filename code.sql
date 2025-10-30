@@ -56,6 +56,8 @@ BEGIN
         END IF;
 ------------------------------------------wasim---------------------
 
+
+------------------------------Aiden------------------------------
       ELSIF (r_gggs.data_type = k_vendor) THEN
 
         IF (r_gggs.process_type = k_new) THEN
@@ -78,6 +80,7 @@ BEGIN
         ELSE
 	      RAISE_APPLICATION_ERROR(-20001, r_gggs.process_type || ' is not a valid process request for ' || r_gggs.data_type || ' data');
         END IF;
+------------------------------Aiden------------------------------
 
       ELSIF (r_gggs.data_type = k_category) THEN
 

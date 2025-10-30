@@ -1,1 +1,1 @@
-DONT FORGTETO ADD YOUR documentation
+DONT FORGET TO ADD YOUR documentation

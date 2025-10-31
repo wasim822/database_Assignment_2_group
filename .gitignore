@@ -1,0 +1,5 @@
+# Ignore the assignment folder
+assignment/
+
+# You can add other project-specific ignores below
+.vscode/settings.json

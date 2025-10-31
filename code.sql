@@ -81,20 +81,28 @@ BEGIN
 	      RAISE_APPLICATION_ERROR(-20001, r_gggs.process_type || ' is not a valid process request for ' || r_gggs.data_type || ' data');
         END IF;
 ------------------------------Aiden------------------------------
-
+------------------------------Sehajbir------------------------------
       ELSIF (r_gggs.data_type = k_category) THEN
 
         IF (r_gggs.process_type = k_new) THEN
-          INSERT INTO gggs_category
+          INSERT INTO gggs_category (CATEGORYID, NAME, DESCRIPTION, STATUS)
           VALUES (gggs_category_seq.NEXTVAL, r_gggs.column1, r_gggs.column2, k_active_status);
 
         ELSIF (r_gggs.process_type = k_status) THEN
           UPDATE gggs_category
              SET status = r_gggs.column2
            WHERE name = r_gggs.column1;
+
+        ELSIF (r_gggs.process_type = k_change) THEN
+          UPDATE gggs_category
+             SET description = DECODE(r_gggs.column2, k_no_change_char, description, r_gggs.column2)
+           WHERE name = r_gggs.column1;
+
         ELSE
-	      RAISE_APPLICATION_ERROR(-20001, r_gggs.process_type || ' is not a valid process request for ' || r_gggs.data_type || ' data');
+          RAISE_APPLICATION_ERROR(-20001, r_gggs.process_type || ' is not a valid process request for ' || r_gggs.data_type || ' data');
         END IF;
+------------------------------Sehajbir------------------------------
+
 
       ELSIF (r_gggs.data_type = k_stock) THEN
 
